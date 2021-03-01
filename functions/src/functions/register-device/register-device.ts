@@ -6,7 +6,13 @@ const registerDevice = callableFunction<'registerDevice'>(async (code) => {
   const client = new Remarkable()
 
   try {
-    const token = await client.register({ code })
+    const token = await client.register({
+      code,
+      deviceId: `readonmarkable-${Math.floor(
+        Math.random() * 10000000000
+      ).toString(16)}`,
+      deviceDesc: 'RoM Connection',
+    })
 
     return token
   } catch (e) {

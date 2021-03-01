@@ -9,7 +9,8 @@ const registerDevice = callableFunction<'registerDevice'>(async (code) => {
     const token = await client.register({ code })
 
     return token
-  } catch {
+  } catch (e) {
+    console.warn(e)
     throw new functions.https.HttpsError('invalid-argument', 'Invalid code')
   }
 })

@@ -1,0 +1,31 @@
+{
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@mozilla/readability": "^0.4.1",
+    "epub-gen": "^0.1.0",
+    "firebase-admin": "^9.4.2",
+    "firebase-functions": "^3.13.1",
+    "got": "^11.8.1",
+    "jsdom": "^16.4.0",
+    "remarkable-typescript": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^16.2.6",
+    "firebase-functions-test": "^0.2.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^3.8.0"
+  },
+  "private": true
+}

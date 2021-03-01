@@ -20,9 +20,10 @@ const SharePageLoader: CFC<SharePageLoaderProps> = ({
   const { token } = useToken()
 
   const uploadArticle = useCallback(async () => {
+    setError(undefined)
     try {
       if (!url) throw new Error('No URL found')
-      if (!token) throw new Error('No token found')
+      if (!token) return
       setArticleDetails(await api.webpageToRemarkable({ url, token }))
       setLoading(false)
     } catch (e) {

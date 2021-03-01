@@ -11,7 +11,6 @@ const registerDevice = callableFunction<'registerDevice'>(async (code) => {
       deviceId: `readonmarkable-${Math.floor(
         Math.random() * 10000000000
       ).toString(16)}`,
-      deviceDesc: 'RoM Connection',
     })
 
     return token
